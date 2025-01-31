@@ -1,0 +1,63 @@
+/* Основной контейнер */
+.counter-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    margin: 0 auto;
+    font-family: Arial, sans-serif;
+}
+
+/* Контролы для шага и счетчика */
+.step-control,
+.count-control {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Кнопки */
+.btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}
+
+/* Значения шага и счетчика */
+.step-value,
+.count-value {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Отображение даты */
+.date-display {
+    text-align: center;
+}
+
+.date-text {
+    font-size: 16px;
+    color: #555;
+}
+
+.date-value {
+    font-size: 18px;
+    font-weight: bold;
+    color: #007bff;
+}

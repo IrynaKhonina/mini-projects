@@ -1,0 +1,39 @@
+.semi-circle-chart {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 200px; /* Максимальная ширина */
+    margin: 0 auto;
+    margin-top: 40px; /* Отступ сверху */
+    padding: 20px;
+    background: linear-gradient(145deg, #ffffff, #f0f0f0); /* Градиентный фон */
+    border-radius: 20px; /* Скругленные углы */
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1); /* Современная тень */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Анимация при наведении */
+}
+
+.semi-circle-chart:hover {
+    transform: translateY(-5px); /* Эффект поднятия */
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2); /* Увеличенная тень при наведении */
+}
+
+.chart-svg {
+    width: 100%;
+    height: auto;
+}
+
+.progress-circle {
+    transition: stroke-dashoffset 0.8s ease-in-out; /* Плавная анимация */
+}
+
+.chart-label {
+    margin-top: 10px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
+    background: linear-gradient(90deg, #4caf50, #81c784); /* Градиентный текст */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}

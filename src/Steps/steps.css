@@ -8,6 +8,11 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
+.steps:hover {
+    transform: translateY(-5px); /* Эффект поднятия */
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2); /* Увеличенная тень при наведении */
+}
+
 
 .numbers {
     display: flex;

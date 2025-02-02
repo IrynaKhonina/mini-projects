@@ -6,7 +6,7 @@
     width: 100%;
     max-width: 200px; /* Максимальная ширина */
     margin: 0 auto;
-    margin-top: 40px; /* Отступ сверху */
+    margin-top: 50px; /* Отступ сверху */
     padding: 20px;
     background: linear-gradient(145deg, #ffffff, #f0f0f0); /* Градиентный фон */
     border-radius: 20px; /* Скругленные углы */

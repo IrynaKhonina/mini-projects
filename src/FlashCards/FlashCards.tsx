@@ -59,10 +59,12 @@ export const FlashCards: React.FC<Props> = (props) => {
             {questions.map((question) => (
                 <div
                     key={question.id}
-                    className={question.id === selectedId ? "selected" : ""}
-                    onClick={() => onClickHandler(question.id)} // Передаем id вопроса в обработчик
+                    className={`card ${question.id === selectedId ? "selected" : ""}`}
+                    onClick={() => onClickHandler(question.id)}
                 >
-                    <p>{question.id === selectedId ? question.answer : question.question}</p>
+                    <div className="content">
+                        <p>{question.id === selectedId ? question.answer : question.question}</p>
+                    </div>
                 </div>
             ))}
         </div>

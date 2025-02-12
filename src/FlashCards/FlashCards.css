@@ -1,27 +1,93 @@
-
 .flashcards {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 20px;
-    margin-top: 50px;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-.flashcards div {
-    border: 1px solid #e7e7e7;
-    background-color: #f7f7f7;
-    border-radius: 7px;
-    aspect-ratio: 2 / 1;
+.card {
+    --primary-color: rgba(111, 87, 234, 0.8);
+    --secondary-color: rgba(52, 201, 235, 0.8);
+
+    border-radius: 16px;
+    padding: 1px;
+    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    min-height: 150px;
+    overflow: hidden;
+    position: relative;
+}
+
+.card::before {
+    content: '';
+    position: absolute;
+    inset: 1px;
+    background: #1a1a1a;
+    border-radius: 15px;
+    z-index: 1;
+    transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 20px rgba(111, 87, 234, 0.3);
+}
+
+.card.selected {
+    background: linear-gradient(45deg, #330345, #ffffff);
+}
+
+.card.selected::before {
+    background: rgb(132, 17, 175);
+    backdrop-filter: blur(2px);
+}
+
+.content {
+    position: relative;
+    z-index: 2;
+    padding: 20px;
+    color: white;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    padding: 20px;
-    cursor: pointer;
+    min-height: 150px;
+    font-size: 0.9em;
+    line-height: 1.4;
 }
 
-div.selected {
-    border: 1px solid #e03131;
-    background-color: #e03131;
-    color: #fff;
-    font-weight: bold;
+.card p {
+    transition: all 0.3s ease;
+    opacity: 0;
+    transform: scale(0.8);
+}
+
+.card.selected p {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.card:not(.selected):hover p {
+    opacity: 0.8;
+    transform: scale(0.95);
+}
+
+/* Анимация появления */
+@keyframes cardAppear {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.card {
+    animation: cardAppear 0.6s ease forwards;
 }

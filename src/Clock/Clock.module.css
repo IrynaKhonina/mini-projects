@@ -1,0 +1,16 @@
+.clock {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+    background-color: #282c34;
+    color: #61dafb;
+    font-family: 'Arial', sans-serif;
+}
+
+.time {
+    font-size: 5rem;
+    font-weight: bold;
+    letter-spacing: 0.1em;
+    text-shadow: 0 0 10px #61dafb, 0 0 20px #61dafb, 0 0 30px #61dafb;
+}

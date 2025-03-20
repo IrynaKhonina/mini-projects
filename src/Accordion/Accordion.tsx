@@ -1,14 +1,14 @@
-import React, { useState } from "react";
+import React from "react";
 import styles from "./Accordion.module.css";
 
-// Определяем тип для элемента FAQ
+// Тип для элемента FAQ
 interface FAQItem {
     title: string;
     text: string;
 }
 
 // Данные для аккордеона
- export const faqs: FAQItem[] = [
+export const faqs: FAQItem[] = [
     {
         title: "Where are these chairs assembled?",
         text: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Accusantium, quaerat temporibus quas dolore provident nisi ut aliquid ratione beatae sequi aspernatur veniam repellendus.",
@@ -47,8 +47,8 @@ interface AccordionItemProps {
 }
 
 // Компонент AccordionItem
-export const AccordionItem: React.FC<AccordionItemProps> = ({ num, title, text }) => {
-    const [isOpen, setIsOpen] = useState<boolean>(false);
+const AccordionItem: React.FC<AccordionItemProps> = ({ num, title, text }) => {
+    const [isOpen, setIsOpen] = React.useState<boolean>(false);
 
     const handleToggle = () => {
         setIsOpen((isOpen) => !isOpen);
@@ -60,14 +60,12 @@ export const AccordionItem: React.FC<AccordionItemProps> = ({ num, title, text }
                 <p className={styles.number}>{num < 9 ? `0${num + 1}` : num + 1}</p>
                 <p className={styles.title}>{title}</p>
                 <p className={styles.icon} aria-expanded={isOpen}>
-                    {isOpen ? "-" : "+"}
+                    {isOpen ? "−" : "+"}
                 </p>
             </div>
-            {isOpen && (
-                <div className={styles.contentBox} aria-hidden={!isOpen}>
-                    {text}
-                </div>
-            )}
+            <div className={styles.contentBox} aria-hidden={!isOpen}>
+                {text}
+            </div>
         </div>
     );
 };
